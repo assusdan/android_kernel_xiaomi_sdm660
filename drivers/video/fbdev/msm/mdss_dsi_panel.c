@@ -22,6 +22,7 @@
 #include <linux/qpnp/pwm.h>
 #include <linux/err.h>
 #include <linux/string.h>
+#include <linux/printk.h>
 
 #include "mdss_dsi.h"
 #include "mdss_dba_utils.h"
@@ -1100,6 +1101,7 @@ end:
 
 static int mdss_dsi_panel_off(struct mdss_panel_data *pdata)
 {
+	dump_stack();
 	struct mdss_dsi_ctrl_pdata *ctrl = NULL;
 	struct mdss_panel_info *pinfo;
 
